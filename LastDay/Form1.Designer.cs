@@ -196,18 +196,18 @@ namespace LastDay
             this.lbl_season_time.AutoSize = true;
             this.lbl_season_time.Location = new System.Drawing.Point(26, 411);
             this.lbl_season_time.Name = "lbl_season_time";
-            this.lbl_season_time.Size = new System.Drawing.Size(155, 20);
+            this.lbl_season_time.Size = new System.Drawing.Size(21, 20);
             this.lbl_season_time.TabIndex = 8;
-            this.lbl_season_time.Text = "British Summer Time";
+            this.lbl_season_time.Text = "...";
             // 
             // lbl_season_hours
             // 
             this.lbl_season_hours.AutoSize = true;
             this.lbl_season_hours.Location = new System.Drawing.Point(26, 438);
             this.lbl_season_hours.Name = "lbl_season_hours";
-            this.lbl_season_hours.Size = new System.Drawing.Size(164, 20);
+            this.lbl_season_hours.Size = new System.Drawing.Size(25, 20);
             this.lbl_season_hours.TabIndex = 9;
-            this.lbl_season_hours.Text = "Time in GMT + 1 hour ";
+            this.lbl_season_hours.Text = "... ";
             // 
             // groupBox1
             // 

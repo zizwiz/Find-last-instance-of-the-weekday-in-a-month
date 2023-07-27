@@ -8,7 +8,7 @@ namespace LastDay
     {
         /// <summary>
         /// Get the last date of the day of week and year that you choose. This is just an example to show how it is done.
-        /// We get the last instance of teh day for every month.  
+        /// We get the last instance of the day for every month.  
         /// </summary>
         public Form1()
         {
@@ -72,7 +72,7 @@ namespace LastDay
 
                 answer = date.AddDays(-daysOffset).ToLongDateString();
 
-                rchtxtbx_output.AppendText(answer + "\r"); // write days to the richtextbox.
+                if (months != 2) rchtxtbx_output.AppendText(answer + "\r"); // write days to the richtextbox.
 
                 if ((months == 2) && (flag))
                 {
@@ -83,7 +83,7 @@ namespace LastDay
                     lbl_date_to_change_to_BST.Text = answer;
                 }
 
-                flag = true;
+                flag = true; //needed for October dates when months == 2.
             }
         }
 
@@ -92,15 +92,19 @@ namespace LastDay
             workOutDates(2);
 
             DateTime dateToCheck = dtTmPicker.Value;
-            //DateTime startDate = DateTime.ParseExact(lbl_date_to_change_to_BST.Text, "dd-mmm-yyyy");
-            //DateTime endDate = (DateTime)lbl_date_to_change_to_GMT.Text;
+            DateTime startDate = DateTime.Parse(lbl_date_to_change_to_BST.Text);
+            DateTime endDate = DateTime.Parse(lbl_date_to_change_to_GMT.Text);
 
-            //DateTime.ParseExact("2009-05-08 14:40:52,531", "yyyy-MM-dd HH:mm:ss,fff",
-
-            //bool isBST = (dateToCheck >= startDate && dateToCheck <= endDate);
-
-
-
+            if (dateToCheck >= startDate && dateToCheck < endDate)
+            {
+                lbl_season_time.Text = "British Summer Time";
+                lbl_season_hours.Text = "Time is GMT + 1 hour";
+            }
+            else
+            {
+                lbl_season_time.Text = "British Winter Time";
+                lbl_season_hours.Text = "Time is GMT";
+            }
         }
     }
 }
